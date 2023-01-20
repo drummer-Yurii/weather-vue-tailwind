@@ -61,9 +61,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import {uid} from 'uid';
 import { RouterLink, useRoute, useRouter } from 'vue-router';
+import {uid} from 'uid';
+import { ref } from 'vue';
 import BaseModal from './BaseModal.vue';
 
 const savedCities = ref([]);
