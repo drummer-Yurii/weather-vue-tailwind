@@ -55,7 +55,7 @@ import { useRouter } from 'vue-router';
     });
   };
 
-  const mapboxAPIKey = "pk.eyJ1Ijoiam9obmtvbWFybmlja2kiLCJhIjoiY2t5NjFzODZvMHJkaDJ1bWx6OGVieGxreSJ9.IpojdT3U3NENknF6_WhR2Q"
+  const mapboxAPIKey = "pk.eyJ1IjoiZHJ1bW1lci15dXJpaSIsImEiOiJjbGNwMWFzaTExb3RuM3ZwODU5enZhc281In0.DQX_MmKM_ilgHB38zO7nVQ"
   const searchQuery = ref("");
   const queryTimeout = ref(null);
   const mapboxSearchResults = ref(null);

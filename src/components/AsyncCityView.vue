@@ -122,7 +122,7 @@
 
 <script setup>
 import axios from 'axios';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const getWeatherData = async () => {
@@ -150,5 +150,4 @@ const getWeatherData = async () => {
     }
 };
 const weatherData = await getWeatherData();
-console.log(weatherData);
 </script>
