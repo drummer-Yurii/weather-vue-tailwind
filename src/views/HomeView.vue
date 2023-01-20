@@ -46,13 +46,12 @@
 import { ref } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
-import CityList from '../components/CityList.vue';
 import CityCardSkeleton from '../components/CityCardSkeleton.vue';
+import CityList from '../components/CityList.vue';
 
 
   const router = useRouter();
   const previewCity = (searchResult) => {
-    console.log(searchResult);
     const [city, state] = searchResult.place_name.split(",");
     router.push({
       name: 'cityView',
@@ -65,7 +64,7 @@ import CityCardSkeleton from '../components/CityCardSkeleton.vue';
     });
   };
 
-  const mapboxAPIKey = "pk.eyJ1IjoiZHJ1bW1lci15dXJpaSIsImEiOiJjbGNwMWFzaTExb3RuM3ZwODU5enZhc281In0.DQX_MmKM_ilgHB38zO7nVQ"
+  const mapboxAPIKey = "pk.eyJ1Ijoiam9obmtvbWFybmlja2kiLCJhIjoiY2t5NjFzODZvMHJkaDJ1bWx6OGVieGxreSJ9.IpojdT3U3NENknF6_WhR2Q"
   const searchQuery = ref("");
   const queryTimeout = ref(null);
   const mapboxSearchResults = ref(null);
