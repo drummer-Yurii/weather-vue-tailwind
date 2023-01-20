@@ -117,6 +117,14 @@
                 </div>
             </div>
         </div>
+        <div 
+            class="flex items-center gap-2 py-12 text-white cursor-pointer 
+            duration-150 hover:text-red-500"
+            @click="removeCity"
+        >
+            <i class="fa-solid fa-trash"></i>
+            <p>Remove City</p>
+        </div>
     </div>
 </template>
 
@@ -128,8 +136,7 @@ const route = useRoute();
 const getWeatherData = async () => {
     try {
         const weatherData = await axios.get(
-            `https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}
-            &lon=${route.query.lng}&exclude={part}&appid=fcc706654502ece41dfef0c987462095&units=imperial`
+                `https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=f4bc1306c8c0bda6307d0dc8941437a4&units=imperial`
         );
 
         // cal current date and time
@@ -150,4 +157,14 @@ const getWeatherData = async () => {
     }
 };
 const weatherData = await getWeatherData();
+
+const router = useRouter();
+const removeCity = () => {
+    const cities = JSON.parse(localStorage.getItem("savedCities"));
+    const updatedCities = cities.filter((city) => city.id !== route.query.id);
+    localStorage.setItem('savedCities', JSON.stringify(updatedCities));
+    router.push({
+        name: "home",
+    });
+};
 </script>

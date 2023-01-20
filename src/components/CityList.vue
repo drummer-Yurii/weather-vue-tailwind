@@ -23,7 +23,7 @@ const getCities = async () => {
         const requests = [];
         savedCities.value.forEach((city) => {
             requests.push(
-                axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${city.coords.lat}&lon=${city.coords.lng}&appid=fcc706654502ece41dfef0c987462095&units=imperial`)
+                axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${city.coords.lat}&lon=${city.coords.lng}&appid=f4bc1306c8c0bda6307d0dc8941437a4&units=imperial`)
             );
         });
         const weatherData = await Promise.all(requests);
@@ -38,7 +38,7 @@ const goToCityView = (city) => {
     router.push({
         name: 'cityView',
         params: {state: city.state, city: city.city},
-        query: {lat: city.coords.lat, lng: city.coords.lng},
+        query: { id: city.id, lat: city.coords.lat, lng: city.coords.lng},
     });
 };
 </script>
